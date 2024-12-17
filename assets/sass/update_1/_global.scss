@@ -1,0 +1,57 @@
+
+.theme-lightgreen {
+    --theme-color: #5DC001;
+    .sub-title {
+        color: $theme-color;
+    }
+}
+.h2,
+h2 {
+	@media (min-width: 1200px) {
+        font-size: 48px;
+        line-height: 1.208;
+    }
+}
+.sec-title {
+    font-weight: 500;
+    margin-top: -0.16em;
+    span {
+        font-weight: 300;
+        color: $theme-color;
+    }
+}
+.title-area .sec-title {
+    margin-bottom: 18px;
+}
+.sub-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 26px;
+    @include sm {
+        font-size: 20px;
+    }
+}
+.box-title {
+    font-weight: 500;
+}
+.offer-card {
+    .box-title {
+        font-weight: 500;
+    }
+    .box-subtitle {
+        font-weight: 500;
+    }
+}
+.testi-card_name {
+    font-weight: 500;
+}
+.offer-grid .box-title {
+    font-weight: 500;
+}
+.testi-grid_name {
+    font-size: 18px;
+}
+.page-title {
+    margin-top: -0.2em;
+}

@@ -1,0 +1,99 @@
+
+/* Hero 4 */
+.hero-4 {
+    .hero-img {
+        position: absolute;
+        right: 1%;
+        bottom: 0;
+        z-index: 3;
+        @include hd {
+            right: 5%;
+        }
+        @include xxl {
+            right: -7%;
+        }
+        @include xl {
+            max-width: 55%;
+        }
+        @include sm {
+            position: relative;
+            right: 0;
+            margin: 0 12px;
+            max-width: 100%;
+        }
+    }
+    .hero-shape1,
+    .hero-shape2,
+    .hero-shape3,
+    .hero-shape4 {
+        position: absolute;
+        z-index: 0;
+    }
+    .hero-shape1 {
+        left: 45%;
+        bottom: 17%;
+    }
+    .hero-shape2 {
+        left: 46%;
+        top: 22%;
+        @include sm {
+            top: 45%;
+            left: unset;
+            right: 2%;
+        }
+    }
+    .hero-shape3 {
+        left: 8%;
+        top: 25%;
+        @include xxl {
+            left: 2%;
+        }
+        @include sm {
+            top: 45%;
+        }
+    }
+    .hero-shape4 {
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        max-width: 28.3%;
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+        @include xxl {
+            max-width: 26.4%;
+        }
+        @include xl {
+            display: none;
+        }
+    }
+}
+.hero-title {
+    margin-top: -0.12em;
+}
+.hero-style4 {
+    padding: 385px 30% 295px 0;
+    text-align: center;
+    .hero-title {
+        text-transform: uppercase;
+        margin-bottom: 17px;
+        > span {
+            margin-left: auto;
+            margin-right: auto;
+            span {
+                color: $theme-color;
+                font-weight: 400;
+            }
+        }
+    }
+    @include xl {
+        padding: 300px 30% 200px 0;
+    }
+    @include lg {
+        padding: 260px 30% 160px 0;
+    }
+    @include sm {
+        padding: 190px 0 40px 0;
+    }
+}
