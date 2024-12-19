@@ -420,7 +420,7 @@
 
             if (blogId) {
                 $.ajax({
-                    url: `http://localhost:5000/blogs/${blogId}`,
+                    url: `https://main.d2y49l6ciczt22.amplifyapp.com/blog/${blogId}`,
                     method: 'GET',
                     success: function (responses) {
                         $('head').append(`<meta name="description" content="${responses.metaDescription}}">`)
