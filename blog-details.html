@@ -420,7 +420,7 @@
 
             if (blogId) {
                 $.ajax({
-                    url: `http://localhost:5000/blog/api/${blogId}`,
+                    url: `/api/blogs/${blogId}`,
                     method: 'GET',
                     success: function (responses) {
                         $('head').append(`<meta name="description" content="${responses.metaDescription}}">`)
@@ -428,15 +428,29 @@
 
                         $('title').append(responses.title)
 
-                        const date = new Date(responses.createdAt)
-                        const options = { day: 'numeric', month: 'long', year: 'numeric' }
-
-                        const formattedDate = date.toLocaleDateString('en-US', options)
+                        const date = new Date(responses.datePosted)
+                        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+                        const formattedDate = !isNaN(date) 
+                            ? date.toLocaleDateString('en-US', options)
+                            : 'Unknown Date'; // Handle invalid dates gracefully
+                        const imageBasePath = 'assets/img/blog/'
+                        const placeholderImage = `assets/img/blog/blog_1_1.jpg`;
+                        const imageUrl = responses.image ? `${imageBasePath}${responses.image}` : placeholderImage;
 
                         $("#blog-container").html(`
-                            <h1>${responses.title} </h1>
-                            <p>Published on: ${formattedDate}</p>
-                            <div> ${responses.content}</div>
+                            <div class="blog-details" style="margin: 50px;">
+                                <h1 class="blog-title">${responses.title}</h1>
+                                <p class="blog-date">Published on: ${formattedDate}</p>
+                                <div class="blog-image">
+                                    <img src="${imageUrl}" alt="${responses.title}" style="width: 800px; max-height: 600px; object-fit: cover;" />
+                                </div>
+                                <div class="blog-content">
+                                    <p style = "font-size: 20px">${responses.content}</p>
+                                </div>
+                                <div class="blog-seo-keywords">
+                                    <p><b>${responses.seoKeywords.map(keyword => `#${keyword}`).join(' ')}</b></p>
+                                </div>
+                            </div>
                             `)
                     },
                     error: function (error) {

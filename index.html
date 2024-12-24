@@ -948,7 +948,7 @@ Blog Area
           data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
           <div class="swiper-wrapper" id="blog-list">
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="blog-card">
                 <div class="blog-img">
                   <img src="assets/img/blog/blog_1_1.jpg" alt="blog image" />
@@ -964,7 +964,7 @@ Blog Area
                       class="fas fa-chevrons-right ms-2"></i></a>
                 </div>
               </div>
-            </div>
+            </div> -->
 
           </div>
         </div>
@@ -1123,36 +1123,39 @@ Blog Area
   <script>
     $(document).ready(function () {
       $.ajax({
-        url: 'https://a696jxv3pl.execute-api.us-east-2.amazonaws.com/default/backend/api/blog',
+        url: '/api/blogs',
         method: 'GET',
         success: function (blogs) {
           let blogList = $('#blog-list');
           const placeholderImage = `assets/img/blog/blog_1_1.jpg`;
+          const imageBasePath = 'assets/img/blog/'
 
           blogs.forEach(blog => {
-            const imageUrl = blog.imageUrl ? blog.imageUrl : placeholderImage;
-            const date = new Date(blog.createdAt);
-            const options = { day: 'numeric', month: 'long', year: 'numeric' }
-            const formattedDate = date.toLocaleDateString(`en-US`, options)
+            const imageUrl = blog.image ? `${imageBasePath}${blog.image}` : placeholderImage;
+            // Parse the date and format it
+            const date = new Date(blog.datePosted);
+                const options = { day: 'numeric', month: 'long', year: 'numeric' };
+                const formattedDate = !isNaN(date) 
+                    ? date.toLocaleDateString('en-US', options)
+                    : 'Unknown Date'; // Handle invalid dates gracefully
 
             blogList.append(`
-            <div class="swiper-slide">
-              <div class="blog-card">
-                <div class="blog-img">
-                  <img src="${imageUrl}" alt="blog image" />
-                </div>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <a><i class="far fa-calendar"></i>${formattedDate}</a>
+              <div class="swiper-slide">
+                  <div class="blog-card">
+                      <div class="blog-img">
+                          <img src="${imageUrl}" alt="blog image" style="max-height=250px; width=391px;"/>
+                      </div>
+                      <div class="blog-content">
+                          <div class="blog-meta">
+                              <a><i class="far fa-calendar"></i>${formattedDate}</a>
+                          </div>
+                          <h3 class="box-title">
+                              <a href="blog-details.html?id=${blog._id}">${blog.title}</a>
+                          </h3>
+                          <a href="blog-details.html?id=${blog._id}" class="th-btn btn-sm style4">Read More<i class="fas fa-chevrons-right ms-2"></i></a>
+                      </div>
                   </div>
-                  <h3 class="box-title">
-                    <a href="./blog-details.html?id=${blog._id}">Change Your Eating Habits With Organic Food</a>
-                  </h3>
-                  <a href="./blog-details.html?id=${blog._id}" class="th-btn btn-sm style4">Read More<i
-                      class="fas fa-chevrons-right ms-2"></i></a>
-                </div>
               </div>
-            </div>
             `)
           });
         },
