@@ -423,21 +423,33 @@
                     url: `/api/blogs/${blogId}`,
                     method: 'GET',
                     success: function (responses) {
-                        $('head').append(`<meta name="description" content="${responses.metaDescription}}">`)
-                        $('head').append(`<meta name="keywords" content="${responses.seoKeywords}}">`)
+                        $('head').append(`<meta name="description" content="${responses.metaDescription}">`);
+                        $('head').append(`<meta name="keywords" content="${responses.seoKeywords.join(', ')}">`);
 
                         $('title').append(responses.title)
 
-                        const date = new Date(responses.createdAt)
-                        const options = { day: 'numeric', month: 'long', year: 'numeric' }
-
-                        const formattedDate = date.toLocaleDateString('en-US', options)
+                        const date = new Date(blog.datePosted);
+                        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+                        const formattedDate = !isNaN(date) 
+                            ? date.toLocaleDateString('en-US', options)
+                            : 'Unknown Date'; // Handle invalid dates gracefully
 
                         $("#blog-container").html(`
-                            <h1>${responses.title} </h1>
-                            <p>Published on: ${formattedDate}</p>
-                            <div> ${responses.content}</div>
-                            `)
+                            <div class="blog-details">
+                                <h1 class="blog-title">${responses.title}</h1>
+                                <p class="blog-date">Published on: ${formattedDate}</p>
+                                <div class="blog-image">
+                                    <img src="/uploads/${responses.image}" alt="${responses.title}" style="width: 100%; max-height: 400px; object-fit: cover;" />
+                                </div>
+                                <div class="blog-content">
+                                    <p>${responses.content}</p>
+                                </div>
+                                <div class="blog-seo-keywords">
+                                    <h3>SEO Keywords:</h3>
+                                    <p>${responses.seoKeywords.map(keyword => `#${keyword}`).join(' ')}</p>
+                                </div>
+                            </div>
+                        `);
                     },
                     error: function (error) {
                         console.log('Error fetching blog details:', error);
