@@ -420,7 +420,7 @@
 
             if (blogId) {
                 $.ajax({
-                    url: `http://localhost:5000/blog/api/${blogId}`,
+                    url: `http://localhost:5000/api/blogs/${blogId}`,
                     method: 'GET',
                     success: function (responses) {
                         $('head').append(`<meta name="description" content="${responses.metaDescription}}">`)
