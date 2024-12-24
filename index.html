@@ -1131,7 +1131,7 @@ Blog Area
           const imageBasePath = 'assets/img/blog/'
 
           blogs.forEach(blog => {
-            const imageUrl = blog.image ? `${imageBasePath}${blog.imageUrl}` : placeholderImage;
+            const imageUrl = blog.image ? `${imageBasePath}${blog.image}` : placeholderImage;
             // Parse the date and format it
             const date = new Date(blog.datePosted);
                 const options = { day: 'numeric', month: 'long', year: 'numeric' };
