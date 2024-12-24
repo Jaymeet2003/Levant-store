@@ -309,9 +309,24 @@ Hero Area
                 <span class="sub-title" data-ani="slideinup" data-ani-delay="0.6s">100% Quality Foods</span>
                 <!-- <a href="#about-sec" class="th-btn" id="smooth-scroller" data-ani="slideinup"
                   data-ani-delay="0.9s">Discover More<i class="fas fa-chevrons-right ms-2"></i></a> -->
-                <a href="https://order.toasttab.com/online/megunticook-market-2-gould-street" class="th-btn style4"
-                  data-ani="slideinup" data-ani-delay="0.9s" target="_blank">Order pizza and sandwiches online<i
-                    class="fas fa-chevrons-right ms-2"></i></a>
+                  <div style="display: flex; gap: .625rem; flex-direction: column;">
+                    <div>
+  
+                      <a href="./contact.html" class="th-btn" data-ani="slideinup" data-ani-delay="0.8s">Request Catering
+                        Proposal<i class="fas fa-chevrons-right ms-2"></i></a>
+                    </div>
+                    <!-- <div>
+  
+                      <a href="#about-sec" class="th-btn" id="smooth-scroller" data-ani="slideinup"
+                    data-ani-delay="0.9s">Discover More<i class="fas fa-chevrons-right ms-2"></i></a>
+                    </div> -->
+                    <div>
+  
+                      <a href="https://order.toasttab.com/online/megunticook-market-2-gould-street" class="th-btn style4"
+                        data-ani="slideinup" data-ani-delay="0.9s" target="_blank">Order pizza and sandwiches online<i
+                          class="fas fa-chevrons-right ms-2"></i></a>
+                    </div>
+                  </div>
               </div>
             </div>
             <div class="hero-img" data-ani="slideinright" data-ani-delay="0.5s">
@@ -1108,7 +1123,7 @@ Blog Area
   <script>
     $(document).ready(function () {
       $.ajax({
-        url: 'http://localhost:5000/blogs',
+        url: 'https://a696jxv3pl.execute-api.us-east-2.amazonaws.com/default/backend/api/blog',
         method: 'GET',
         success: function (blogs) {
           let blogList = $('#blog-list');
