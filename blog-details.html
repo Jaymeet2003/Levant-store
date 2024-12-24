@@ -433,11 +433,24 @@
                         const formattedDate = !isNaN(date) 
                             ? date.toLocaleDateString('en-US', options)
                             : 'Unknown Date'; // Handle invalid dates gracefully
+                        const imageBasePath = 'assets/img/blog/'
+                        const imageUrl = responses.image ? `${imageBasePath}${responses.image}` : placeholderImage;
 
                         $("#blog-container").html(`
-                            <h1>${responses.title} </h1>
-                            <p>Published on: ${formattedDate}</p>
-                            <div> ${responses.content}</div>
+                            <div class="blog-details">
+                                <h1 class="blog-title">${responses.title}</h1>
+                                <p class="blog-date">Published on: ${formattedDate}</p>
+                                <div class="blog-image">
+                                    <img src="${imageUrl}${responses.image}" alt="${responses.title}" style="width: 100%; max-height: 400px; object-fit: cover;" />
+                                </div>
+                                <div class="blog-content">
+                                    <p>${responses.content}</p>
+                                </div>
+                                <div class="blog-seo-keywords">
+                                    <h3>SEO Keywords:</h3>
+                                    <p>${responses.seoKeywords.map(keyword => `#${keyword}`).join(' ')}</p>
+                                </div>
+                            </div>
                             `)
                     },
                     error: function (error) {
