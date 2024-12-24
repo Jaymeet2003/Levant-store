@@ -434,17 +434,10 @@
                             ? date.toLocaleDateString('en-US', options)
                             : 'Unknown Date'; // Handle invalid dates gracefully
 
-                        const imageUrl = responses.image ? `${imageBasePath}${responses.image}` : placeholderImage;
-
                         $("#blog-container").html(`
                             <h1>${responses.title} </h1>
                             <p>Published on: ${formattedDate}</p>
-                            <img src="${imageUrl}" alt="${responses.title}" style="width: 100%; max-height: 400px; object-fit: cover;" />
                             <div> ${responses.content}</div>
-                            <div class="blog-seo-keywords">
-                                <h3>SEO Keywords:</h3>
-                                <p>${responses.seoKeywords.map(keyword => `#${keyword}`).join(' ')}</p>
-                            </div>
                             `)
                     },
                     error: function (error) {
