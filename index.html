@@ -1128,9 +1128,10 @@ Blog Area
         success: function (blogs) {
           let blogList = $('#blog-list');
           const placeholderImage = `assets/img/blog/blog_1_1.jpg`;
+          const imageBasePath = 'assets/img/blog/'
 
           blogs.forEach(blog => {
-            const imageUrl = blog.imageUrl ? `assets/img/blog/${blog.imageUrl}` : placeholderImage;
+            const imageUrl = blog.image ? `${imageBasePath}${blog.imageUrl}` : placeholderImage;
             // Parse the date and format it
             const date = new Date(blog.datePosted);
                 const options = { day: 'numeric', month: 'long', year: 'numeric' };
