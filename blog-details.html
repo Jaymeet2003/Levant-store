@@ -428,9 +428,10 @@
 
                         $('title').append(responses.title)
 
-                        const formattedDate = !isNaN(date) 
-                                ? date.toLocaleDateString('en-US', options)
-                                : 'Unknown Date'; // Handle invalid dates gracefully
+                        const date = new Date(responses.datePosted)
+                        const formattedDate = !isNaN(date)
+                            ? date.toLocaleDateString('en-US', options)
+                            : 'Invalid Date';
 
                         $("#blog-container").html(`
                             <h1>${responses.title} </h1>
