@@ -1123,7 +1123,7 @@ Blog Area
   <script>
     $(document).ready(function () {
       $.ajax({
-        url: 'http://localhost:5000/backend/api/blogs',
+        url: '/api/blogs',
         method: 'GET',
         success: function (blogs) {
           let blogList = $('#blog-list');
