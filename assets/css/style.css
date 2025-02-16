@@ -3156,7 +3156,6 @@ a.text-theme:hover,
 .slideinup,
 .rollinleft,
 .rollinright {
-  opacity: 0;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   -webkit-animation-iteration-count: 1;
