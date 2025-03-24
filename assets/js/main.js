@@ -903,3 +903,20 @@ function validateDate() {
   }
   return true;
 }
+
+var swiper = new Swiper('testiSlide1', {
+  effect: 'fade',
+  loop: true,
+  fadeEffect: {
+    crossFade: true
+  },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  }
+});
+
