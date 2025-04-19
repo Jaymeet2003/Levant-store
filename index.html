@@ -309,24 +309,24 @@ Hero Area
                 <span class="sub-title" data-ani="slideinup" data-ani-delay="0.6s">100% Quality Foods</span>
                 <!-- <a href="#about-sec" class="th-btn" id="smooth-scroller" data-ani="slideinup"
                   data-ani-delay="0.9s">Discover More<i class="fas fa-chevrons-right ms-2"></i></a> -->
-                  <div style="display: flex; gap: .625rem; flex-direction: column;">
-                    <div>
-  
-                      <a href="./contact.html" class="th-btn" data-ani="slideinup" data-ani-delay="0.8s">Request Catering
-                        Proposal<i class="fas fa-chevrons-right ms-2"></i></a>
-                    </div>
-                    <!-- <div>
+                <div style="display: flex; gap: .625rem; flex-direction: column;">
+                  <div>
+
+                    <a href="./contact.html" class="th-btn" data-ani="slideinup" data-ani-delay="0.8s">Request Catering
+                      Proposal<i class="fas fa-chevrons-right ms-2"></i></a>
+                  </div>
+                  <!-- <div>
   
                       <a href="#about-sec" class="th-btn" id="smooth-scroller" data-ani="slideinup"
                     data-ani-delay="0.9s">Discover More<i class="fas fa-chevrons-right ms-2"></i></a>
                     </div> -->
-                    <div>
-  
-                      <a href="https://order.toasttab.com/online/megunticook-market-2-gould-street" class="th-btn style4"
-                        data-ani="slideinup" data-ani-delay="0.9s" target="_blank">Order pizza and sandwiches online<i
-                          class="fas fa-chevrons-right ms-2"></i></a>
-                    </div>
+                  <div>
+
+                    <a href="https://order.toasttab.com/online/megunticook-market-2-gould-street" class="th-btn style4"
+                      data-ani="slideinup" data-ani-delay="0.9s" target="_blank">Order pizza and sandwiches online<i
+                        class="fas fa-chevrons-right ms-2"></i></a>
                   </div>
+                </div>
               </div>
             </div>
             <div class="hero-img" data-ani="slideinright" data-ani-delay="0.5s">
@@ -948,6 +948,8 @@ Blog Area
           data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
           <div class="swiper-wrapper" id="blog-list">
 
+
+
             <!-- <div class="swiper-slide">
               <div class="blog-card">
                 <div class="blog-img">
@@ -1117,6 +1119,8 @@ Blog Area
   <!-- Isotope Filter -->
   <script src="assets/js/imagesloaded.pkgd.min.js"></script>
   <script src="assets/js/isotope.pkgd.min.js"></script>
+  <!-- Blog List -->
+  <script src="assets/js/blogs.js"></script>
 
   <!-- Main Js File -->
   <script src="assets/js/main.js"></script>
@@ -1134,10 +1138,10 @@ Blog Area
             const imageUrl = blog.image ? `${imageBasePath}${blog.image}` : placeholderImage;
             // Parse the date and format it
             const date = new Date(blog.datePosted);
-                const options = { day: 'numeric', month: 'long', year: 'numeric' };
-                const formattedDate = !isNaN(date) 
-                    ? date.toLocaleDateString('en-US', options)
-                    : 'Unknown Date'; // Handle invalid dates gracefully
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            const formattedDate = !isNaN(date)
+              ? date.toLocaleDateString('en-US', options)
+              : 'Unknown Date'; // Handle invalid dates gracefully
 
             blogList.append(`
               <div class="swiper-slide">
@@ -1159,7 +1163,7 @@ Blog Area
             `)
           });
         },
-        error: function () {
+        error: function (error) {
           console.log(`Error fetching blogs:`, error)
         },
       })
