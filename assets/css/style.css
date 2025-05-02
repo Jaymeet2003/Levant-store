@@ -17145,6 +17145,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 100%;
 }
 
+.video-container-without-style {
+  position: relative;
+  width: 100%;
+  min-width: 50%;
+  min-height: 300px;
+}
+
 /* Absolute Center Spinner */
 .loading {
   position: fixed;
