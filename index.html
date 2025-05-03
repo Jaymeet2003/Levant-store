@@ -288,7 +288,7 @@
 Hero Area
 ==============================-->
   <div class="th-hero-wrapper hero-1" id="hero" data-bg-src="assets/img/hero/hero_bg_1_2.jpg">
-    <div class="swiper th-slider" id="heroSlide1" data-slider-options='{"effect":"fade"}'>
+    <div class="swiper th-slider" id="heroSlide1" data-slider-options='{"effect":"fade", "navigation": true, "pagination": true}'>
       <div class="swiper-wrapper">
         <!-- Hero section slider - 1 -->
         <div class="swiper-slide">
@@ -1171,7 +1171,7 @@ Blog Area
   <script src="assets/js/blogs.js"></script>
 
   <!-- Main Js File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
   <script>
     $(document).ready(function () {
       $.ajax({
