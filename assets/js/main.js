@@ -229,6 +229,16 @@
     var thSlider = $(this);
     var settings = $(this).data("slider-options");
 
+    // Fallback in case jQuery fails to parse data-slider-options properly (common on Apache/Linux)
+    if (!settings || typeof settings === "string") {
+      try {
+        settings = JSON.parse($(this).attr("data-slider-options"));
+      } catch (e) {
+        console.warn("Failed to parse data-slider-options:", e);
+        settings = {};
+      }
+    }
+
     // Store references to the navigation Slider
     var prevArrow = thSlider.find(".slider-prev");
     var nextArrow = thSlider.find(".slider-next");
@@ -297,8 +307,7 @@
       },
     };
 
-    var options = JSON.parse(thSlider.attr("data-slider-options"));
-    options = $.extend({}, sliderDefault, options);
+    var options = $.extend({}, sliderDefault, settings);
     var swiper = new Swiper(thSlider.get(0), options); // Assign the swiper variable c
 
     if ($(".slider-area").length > 0) {
