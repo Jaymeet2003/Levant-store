@@ -322,6 +322,7 @@
 
     var options = $.extend({}, sliderDefault, settings);
     var swiper = new Swiper(thSlider.get(0), options); // Assign the swiper variable c
+    thSlider.get(0).swiper = swiper;
 
     if ($(".slider-area").length > 0) {
       $(".slider-area").closest(".container").parent().addClass("arrow-wrap");
