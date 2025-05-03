@@ -239,6 +239,19 @@
       }
     }
 
+    // Ensure navigation and pagination elements exist for #heroSlide1 (for EC2 compatibility)
+    if (thSlider.attr("id") === "heroSlide1") {
+      if (thSlider.find(".slider-prev.swiper-button-prev").length === 0) {
+        thSlider.append('<div class="slider-prev swiper-button-prev"></div>');
+      }
+      if (thSlider.find(".slider-next.swiper-button-next").length === 0) {
+        thSlider.append('<div class="slider-next swiper-button-next"></div>');
+      }
+      if (thSlider.find(".slider-pagination.swiper-pagination").length === 0) {
+        thSlider.append('<div class="slider-pagination swiper-pagination"></div>');
+      }
+    }
+
     // Store references to the navigation Slider
     var prevArrow = thSlider.find(".slider-prev");
     var nextArrow = thSlider.find(".slider-next");
