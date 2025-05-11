@@ -36,11 +36,13 @@ const blogsList = [
     },
     {
         id: "blog-8",
-        title: "Small Event Catering in Waldoboro: 5 Things to Look For"
+        title: "Small Event Catering in Waldoboro: 5 Things to Look For",
+        url: "./blogs/small_event_catering_in_waldoboro.html"
     },
     {
         id: "blog-9",
-        title: "How to Host an Elegant Cocktail Party with Catering in Rockland"
+        title: "How to Host an Elegant Cocktail Party with Catering in Rockland",
+        url: "./blogs/cocktail_party_in_rockland.html"
     }
 ];
 
