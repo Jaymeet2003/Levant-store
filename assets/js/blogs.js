@@ -1,31 +1,38 @@
 const blogsList = [
     {
         id: "blog-1",
-        title: "Best Catering Company in Camden | Choosing the Right One"
+        title: "Best Catering Company in Camden | Choosing the Right One",
+        url: "./blogs/best_catering_in_camden.html"
     },
     {
         id: "blog-2",
-        title: "Baby Shower Catering in Lincolnville: Tips for a Perfect Menu"
+        title: "Baby Shower Catering in Lincolnville: Tips for a Perfect Menu",
+        url: "./blogs/baby_shower_catering_in_lincolnville.html"
     },
     {
         id: "blog-3",
-        title: "Buffet Catering in Belfast: A Guide to Corporate & Private Events"
+        title: "Buffet Catering in Belfast: A Guide to Corporate & Private Events",
+        url: "./blogs/buffet_catering_in_belfast.html"
     },
     {
         id: "blog-4",
-        title: "How to Plan the Ultimate Party with Catering in Rockland"
+        title: "How to Plan the Ultimate Party with Catering in Rockland",
+        url: "./blogs/party_with_catering_in_rockland.html"
     },
     {
         id: "blog-5",
-        title: "Last-Minute Catering Services in Rockland – What to Know"
+        title: "Last-Minute Catering Services in Rockland – What to Know",
+        url: "./blogs/last_minute_catering_service_in_rockland.html"
     },
     {
         id: "blog-6",
-        title: "Why You Should Hire a Professional Caterer for Baby Showers in Rockport"
+        title: "Why You Should Hire a Professional Caterer for Baby Showers in Rockport",
+        url: "./blogs/caterer_for_baby_showers_in_rockport.html"
     },
     {
         id: "blog-7",
-        title: "How to Plan a Stress-Free Birthday Party with Catering in Lincolnville"
+        title: "How to Plan a Stress-Free Birthday Party with Catering in Lincolnville",
+        url: "./blogs/stress_free_birthday_party_catering_in_lincolnville.html"
     },
     {
         id: "blog-8",
@@ -61,9 +68,9 @@ blogsList.forEach(blog => {
                               <a><i class="far fa-calendar"></i>${formattedDate}</a>
                           </div>
                           <h3 class="box-title">
-                              <a href="blog-details.html?id=${blog.id}">${blog.title}</a>
+                              <a href="${blog.url}?id=${blog.id}">${blog.title}</a>
                           </h3>
-                          <a href="blog-details.html?id=${blog.id}" class="th-btn btn-sm style4">Read More<i class="fas fa-chevrons-right ms-2"></i></a>
+                          <a href="${blog.url}?id=${blog.id}" class="th-btn btn-sm style4">Read More<i class="fas fa-chevrons-right ms-2"></i></a>
                       </div>
                   </div>
               </div>
