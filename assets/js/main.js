@@ -230,49 +230,60 @@
     var settings = $(this).data("slider-options");
 
     // Fallback in case jQuery fails to parse data-slider-options properly (common on Apache/Linux)
-    if (!settings || typeof settings === "string") {
-      try {
-        settings = JSON.parse($(this).attr("data-slider-options"));
-      } catch (e) {
-        console.warn("Failed to parse data-slider-options:", e);
-        settings = {};
+    // if (!settings || typeof settings === "string") {
+    //   try {
+    //     settings = JSON.parse($(this).attr("data-slider-options"));
+    //   } catch (e) {
+    //     console.warn("Failed to parse data-slider-options:", e);
+    //     settings = {};
+    //   }
+    // }
+    if (thSlider.attr("id") === "heroSlide1") {
+      if (thSlider.find(".slider-prev.swiper-button-prev").length === 0) {
+        
+        thSlider.append('<div class="slider-prev swiper-button-prev"></div>');
+      }
+      if (thSlider.find(".slider-next.swiper-button-next").length === 0) {
+        thSlider.append('<div class="slider-next swiper-button-next"></div>');
+      }
+      if (thSlider.find(".slider-pagination.swiper-pagination").length === 0) {
+        thSlider.append('<div class="slider-pagination swiper-pagination"></div>');
       }
     }
-
     // Always ensure navigation and pagination elements exist
-    if (thSlider.find(".slider-prev").length === 0) {
-      thSlider.append('<div class="slider-prev swiper-button-prev"></div>');
-    }
-    if (thSlider.find(".slider-next").length === 0) {
-      thSlider.append('<div class="slider-next swiper-button-next"></div>');
-    }
-    if (thSlider.find(".slider-pagination").length === 0) {
-      thSlider.append('<div class="slider-pagination swiper-pagination"></div>');
-    }
+    // if (thSlider.find(".slider-prev").length === 0) {
+    //   thSlider.append('<div class="slider-prev swiper-button-prev"></div>');
+    // }
+    // if (thSlider.find(".slider-next").length === 0) {
+    //   thSlider.append('<div class="slider-next swiper-button-next"></div>');
+    // }
+    // if (thSlider.find(".slider-pagination").length === 0) {
+    //   thSlider.append('<div class="slider-pagination swiper-pagination"></div>');
+    // }
 
     // After parsing settings, inject navigation/pagination fallback if not present
-    if (!settings.navigation) {
-      settings.navigation = {
-        nextEl: thSlider.find(".slider-next").get(0),
-        prevEl: thSlider.find(".slider-prev").get(0),
-      };
-    }
-    if (!settings.pagination) {
-      settings.pagination = {
-        el: thSlider.find(".slider-pagination").get(0),
-        type: "bullets",
-        clickable: true,
-        renderBullet: function (index, className) {
-          return (
-            '<span class="' +
-            className +
-            '" aria-label="Go to Slide ' +
-            (index + 1) +
-            '"></span>'
-          );
-        },
-      };
-    }
+    // if (!settings.navigation) {
+    //   settings.navigation = {
+    //     nextEl: thSlider.find(".slider-next").get(0),
+    //     prevEl: thSlider.find(".slider-prev").get(0),
+    //   };
+    // }
+    // if (!settings.pagination) {
+    //   settings.pagination = {
+    //     el: thSlider.find(".slider-pagination").get(0),
+    //     type: "bullets",
+    //     clickable: true,
+    //     renderBullet: function (index, className) {
+    //       return (
+    //         '<span class="' +
+    //         className +
+    //         '" aria-label="Go to Slide ' +
+    //         (index + 1) +
+    //         '"></span>'
+    //       );
+    //     },
+    //   };
+    // }
 
     // Store references to the navigation Slider
     var prevArrow = thSlider.find(".slider-prev");
@@ -344,7 +355,7 @@
 
     var options = $.extend({}, sliderDefault, settings);
     var swiper = new Swiper(thSlider.get(0), options); // Assign the swiper variable c
-    thSlider.get(0).swiper = swiper;
+    // thSlider.get(0).swiper = swiper;
 
     if ($(".slider-area").length > 0) {
       $(".slider-area").closest(".container").parent().addClass("arrow-wrap");

@@ -2,47 +2,56 @@ const blogsList = [
     {
         id: "blog-1",
         title: "Best Catering Company in Camden | Choosing the Right One",
-        url: "./blogs/best_catering_in_camden.html"
+        url: "./blogs/best_catering_in_camden.html",
+        datePosted:"05/05/2025"
     },
     {
         id: "blog-2",
         title: "Baby Shower Catering in Lincolnville: Tips for a Perfect Menu",
-        url: "./blogs/baby_shower_catering_in_lincolnville.html"
+        url: "./blogs/baby_shower_catering_in_lincolnville.html",
+        datePosted:"05/05/2025"
     },
     {
         id: "blog-3",
         title: "Buffet Catering in Belfast: A Guide to Corporate & Private Events",
-        url: "./blogs/buffet_catering_in_belfast.html"
+        url: "./blogs/buffet_catering_in_belfast.html",
+        datePosted:"05/05/2025"
     },
     {
         id: "blog-4",
         title: "How to Plan the Ultimate Party with Catering in Rockland",
-        url: "./blogs/party_with_catering_in_rockland.html"
+        url: "./blogs/party_with_catering_in_rockland.html",
+        datePosted:"05/05/2025"
     },
     {
         id: "blog-5",
         title: "Last-Minute Catering Services in Rockland – What to Know",
-        url: "./blogs/last_minute_catering_service_in_rockland.html"
+        url: "./blogs/last_minute_catering_service_in_rockland.html",
+        datePosted:"05/05/2025"
     },
     {
         id: "blog-6",
         title: "Why You Should Hire a Professional Caterer for Baby Showers in Rockport",
-        url: "./blogs/caterer_for_baby_showers_in_rockport.html"
+        url: "./blogs/caterer_for_baby_showers_in_rockport.html",
+        datePosted:"05/05/2025"
     },
     {
         id: "blog-7",
         title: "How to Plan a Stress-Free Birthday Party with Catering in Lincolnville",
-        url: "./blogs/stress_free_birthday_party_catering_in_lincolnville.html"
+        url: "./blogs/stress_free_birthday_party_catering_in_lincolnville.html",
+        datePosted:"05/05/2025"
     },
     {
         id: "blog-8",
         title: "Small Event Catering in Waldoboro: 5 Things to Look For",
-        url: "./blogs/small_event_catering_in_waldoboro.html"
+        url: "./blogs/small_event_catering_in_waldoboro.html",
+        datePosted:"05/05/2025"
     },
     {
         id: "blog-9",
         title: "How to Host an Elegant Cocktail Party with Catering in Rockland",
-        url: "./blogs/cocktail_party_in_rockland.html"
+        url: "./blogs/cocktail_party_in_rockland.html",
+        datePosted:"05/05/2025"
     }
 ];
 
