@@ -285,10 +285,10 @@
     if (thSlider.attr("id") === "heroSlide1") {
       if (thSlider.find(".slider-prev.swiper-button-prev").length === 0) {
 
-        thSlider.append('<div class="slider-prev swiper-button-prev"></div>');
+        // thSlider.append('<div class="slider-prev swiper-button-prev"></div>');
       }
       if (thSlider.find(".slider-next.swiper-button-next").length === 0) {
-        thSlider.append('<div class="slider-next swiper-button-next"></div>');
+        // thSlider.append('<div class="slider-next swiper-button-next"></div>');
       }
       if (thSlider.find(".slider-pagination.swiper-pagination").length === 0) {
         thSlider.append('<div class="slider-pagination swiper-pagination"></div>');
