@@ -5456,7 +5456,7 @@ ol.wp-block-rss {
   font-weight: 500;
   font-size: 16px;
   display: inline-block;
-  margin: 0 10px 0 0;
+  margin: 0 20px 0 0;
   color: var(--body-color);
 }
 
@@ -5531,6 +5531,12 @@ ol.wp-block-rss {
 }
 
 .header-links .social-links a {
+  font-size: 14px;
+}
+
+.header-links .social-links {
+  display: flex;
+  gap: 20px;
   font-size: 14px;
 }
 
@@ -6213,7 +6219,7 @@ ol.wp-block-rss {
 
 @media (max-width: 991px) {
   .footer-layout1 {
-    padding-top: 160px;
+    padding-top: 80px;
     margin-top: -160px;
   }
 }
@@ -16102,6 +16108,10 @@ span.select2-selection.select2-selection--single:focus {
     top: 45%;
     left: unset;
     right: 2%;
+  }
+
+  .hero-shape1 {
+    display: none;
   }
 }
 
